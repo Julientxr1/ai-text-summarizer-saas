@@ -1,0 +1,15 @@
+# 1. GESTION DU CONTEXTE
+- Ne lis JAMAIS plus de 3 fichiers à la fois pour préserver le budget de tokens.
+- N'explore JAMAIS les dossiers à l'aveugle. Utilise toujours le serveur MCP **Serena** pour faire des recherches sémantiques et trouver les fichiers pertinents.
+- Demande-moi toujours quels fichiers sont pertinents avant de faire des modifications massives.
+
+# 2. DOCUMENTATION
+- Utilise SYSTÉMATIQUEMENT le serveur MCP **Context7** lorsque tu as besoin de documentation sur une API, de générer du code pour une nouvelle librairie (ex: FastAPI), ou pour des étapes de configuration. Ne te fie pas à ta mémoire interne.
+
+# 3. RÈGLES DE CODE (Python & FastAPI)
+- Séparation stricte : le code API va dans le dossier `/backend`, l'interface dans `/frontend`.
+- Tout le code Python doit être strictement typé (Type Hints).
+- Les noms de variables et fonctions doivent être en anglais, mais les commentaires (qui doivent être concis) seront en français.
+
+# 4. SÉCURITÉ
+- Ne mets jamais de clés d'API en dur dans le code, utilise `os.getenv()` et rappelle-moi de mettre à jour le `.env`.
