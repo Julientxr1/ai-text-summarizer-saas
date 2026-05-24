@@ -10,7 +10,6 @@ Le projet suit une séparation claire des responsabilités :
 
 - **Backend** — API RESTful développée avec **FastAPI**, gérant la logique métier et la communication sécurisée avec l'IA.
 - **Frontend** — Interface épurée permettant une interaction simple avec l'API, avec gestion d'état (chargement, erreurs).
-- **Gestion agentique** — Architecture optimisée pour une maintenance facilitée par des agents (utilisation de `.clinerules` pour garantir la cohérence du code).
 
 ---
 
@@ -41,11 +40,11 @@ pip install -r requirements.txt
 
 **3. Configurer les secrets**
 
-Copiez le fichier d'exemple et renseignez votre clé API :
+Copiez le fichier d'exemple et renseignez vos variables :
 
 ```bash
 cp .env.example .env
-# Éditez .env et insérez votre ANTHROPIC_API_KEY
+# Éditez .env et insérez votre ANTHROPIC_API_KEY et ALLOWED_ORIGINS
 ```
 
 **4. Lancer le serveur**
@@ -73,6 +72,19 @@ L'API est accessible sur `http://localhost:8000` et la documentation interactive
 
 - La clé API Anthropic n'est **jamais** exposée côté frontend.
 - Les variables sensibles sont chargées exclusivement via `.env`, exclu du contrôle de version.
+- Le CORS est restreint aux origines définies dans `ALLOWED_ORIGINS` (`.env`).
+
+---
+
+## 📋 Changelog
+
+### v1.1.0
+- **Sécurité** — CORS restreint : `allow_origins=["*"]` remplacé par une liste configurable via la variable d'environnement `ALLOWED_ORIGINS`
+- **Logs** — Ajout de logs détaillés à chaque requête (IP, taille du texte, modèle utilisé, durée de traitement, taille du résumé)
+- **Repo** — Suppression de `.clinerules` et `.clineignore` du contrôle de version (configs personnelles)
+
+### v1.0.0
+- Version initiale : backend FastAPI + frontend HTML, résumé de texte via l'API Anthropic
 
 ---
 
