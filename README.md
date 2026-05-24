@@ -78,6 +78,9 @@ L'API est accessible sur `http://localhost:8000` et la documentation interactive
 
 ## 📋 Changelog
 
+### v1.2.0
+- **CI** — Ajout d'un workflow GitHub Actions Pylint sur chaque push vers `main`
+
 ### v1.1.0
 - **Sécurité** — CORS restreint : `allow_origins=["*"]` remplacé par une liste configurable via la variable d'environnement `ALLOWED_ORIGINS`
 - **Logs** — Ajout de logs détaillés à chaque requête (IP, taille du texte, modèle utilisé, durée de traitement, taille du résumé)
